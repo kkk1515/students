@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="menu">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="/css/students_application.css" type="text/css">
+    <link rel="stylesheet" href="/css/common.css" type="text/css">
+    <link href="/css/home.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="google" value="notranslate" />
+    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <title>就職活動申請画面</title>
+</head>
+
+<body>
+    <nav class="main-menu">
+        <div>
+            <a class="logo" href="http://startific.com">
+            </a>
+        </div>
+        <div class="settings"></div>
+        <div class="scrollbar" id="style-1">
+            <ul>
+                <!-- 1st -->
+                <li class="darkerli">
+                    <a href="/home/home.html">
+                        <i class="fa fa-home fa-lg"></i>
+                        <span class="nav-text">home</span>
+                    </a>
+                </li>
+
+                <!-- 2nd -->
+                <li class="darkerli">
+                    <a href="students_application.html">
+                        <i class="fa fa-desktop fa-lg"></i>
+                        <span class="nav-text">application</span>
+                    </a>
+                </li>
+
+                <div class="addthis_default_style addthis_32x32_style">
+
+                    <div style="position:absolute; margin-left: 56px;top:3px;">
+
+                        <a href="https://www.instagram.com/apple_children_inc/?hl=ja" target="_blank" class="share-popup"><img src="/img/instagram.png" width="30px" height="30px"></a>
+
+                        <a href="https://twitter.com/ApCh_Inc" target="_blank" class="share-popup"><img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock-icon-set--icons-by-dakirby/512/Twitter_alt.png" width="30px" height="30px"></a>
+
+                        <a href="https://plusone.google.com/_/+1/confirm?hl=en&url=_URL_&title=_TITLE_" target="_blank" class="share-popup">
+                            <img src="/img/web.PNG" width="30px" height="30px">
+                        </a>
+                    </div>
+                    <script type="text/javascript">
+                        var addthis_config = {
+                            "data_track_addressbar": true
+                        };
+                    </script>
+                    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ff17589278d8b3a"></script>
+
+                    <!-- <span class="twitter"></span>
+<span class="google"></span>
+<span class="fb-like">
+<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffacebook.com%2Fstartific&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
+
+</span>よくわからん -->
+                    <span class="nav-text">
+                    </span>
+
+                    <!-- 3rd -->
+                    <li class="darkerli">
+                        <a href="/search/students_search.html">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span class="nav-text">seach</span>
+                        </a>
+                    </li>
+
+                    <li class="darkerli">
+                        <a>
+                            <div class="hidden_box">
+                                <label for="label1"><span class="nav-text">　　　　　クリックして表示</span></label>
+                                <input type="checkbox" id="label1" class="hidden_check" />
+                                <div class="hidden_show">
+                                    <!--非表示ここから-->
+                                    　　　　日付<br>　　　　
+                                    <input type="date" name="date"><br>
+                                    　　　　活動会社名<br>　　　　
+                                    <input type="text" name="company"><br>
+                                    　　　<input type="button" onClick="location.href='/search/students_search.html'" value="検索">
+                                    <!--ここまで-->
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- 4th -->
+                    <li class="darkerli">
+                        <a href="/search/students_search.html">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span class="nav-text">chat</span>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+    <form>
+        <h1>就職活動申請画面</h1>
+        開始時<input type="datetime-local" name="start"><br><br>
+
+        終了時<input type="datetime-local" name="finish" placeholder="例)2018"><br><br>
+
+        場所
+        <input type="text" name="place" placeholder="例)北海道情報専門学校"><br><br>
+        内容
+        <input type="radio" name="contents" value="gouki">合企
+        <input type="radio" name="contents" value="tandoku">単独
+        <input type="radio" name="contents" value="shiken">試験<br><br>
+
+        活動会社名
+        <input type="text" name="company"><br><br>
+
+        <!-- スペースは文字調整のため使用 -->
+        　　　　　　　　<input type="radio" name="company" value="absence">欠席
+        <input type="datetime-local" name="sabsence" value="sabsence">
+        ～
+        <input type="datetime-local" name="fabsence" value="fabsence">
+        <br><br>
+
+        <!-- スペースは文字調整のため使用 -->
+        　<input type="radio" name="company" value="leave">早退
+        <input type="datetime-local" name="seave">
+        より早退予定<br><br>
+
+        <!-- スペースは文字調整のため使用 -->
+        　　<input type="radio" name="company" value="late">遅刻
+        <input type="datetime-local" name="slate">
+        分より出席予定<br><br>
+
+        メモ<br>
+        <textarea name="remarks" cols="40" maxlength="40" value="remarks"></textarea><br><br>
+        <input type="button" onClick="location.href='students_application_finish.html'" value="送信する">
+    </form>
+</body>
+
+</html>
