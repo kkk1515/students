@@ -4,13 +4,14 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="/css/students_application.css" type="text/css">
-    <link rel="stylesheet" href="/css/common.css" type="text/css">
-    <link href="/css/home.css" rel="stylesheet">
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="google" value="notranslate" />
+    <link rel="stylesheet" href="../css/students_application.css" type="text/css">
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+    <link href="../css/home.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" value="notranslate">
     <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/common.js"></script>
     <title>就職活動申請画面</title>
 </head>
 
@@ -25,7 +26,7 @@
             <ul>
                 <!-- 1st -->
                 <li class="darkerli">
-                    <a href="/home/home.html">
+                    <a href="../home/home.html">
                         <i class="fa fa-home fa-lg"></i>
                         <span class="nav-text">home</span>
                     </a>
@@ -43,12 +44,12 @@
 
                     <div style="position:absolute; margin-left: 56px;top:3px;">
 
-                        <a href="https://www.instagram.com/apple_children_inc/?hl=ja" target="_blank" class="share-popup"><img src="/img/instagram.png" width="30px" height="30px"></a>
+                        <a href="https://www.instagram.com/apple_children_inc/?hl=ja" target="_blank" class="share-popup"><img src="../img/instagram.png" width="30px" height="30px"></a>
 
                         <a href="https://twitter.com/ApCh_Inc" target="_blank" class="share-popup"><img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock-icon-set--icons-by-dakirby/512/Twitter_alt.png" width="30px" height="30px"></a>
 
                         <a href="https://plusone.google.com/_/+1/confirm?hl=en&url=_URL_&title=_TITLE_" target="_blank" class="share-popup">
-                            <img src="/img/web.PNG" width="30px" height="30px">
+                            <img src="../img/web.png" width="30px" height="30px">
                         </a>
                     </div>
                     <script type="text/javascript">
@@ -69,7 +70,7 @@
 
                     <!-- 3rd -->
                     <li class="darkerli">
-                        <a href="/search/students_search.html">
+                        <a href="../search/students_search.html">
                             <i class="fa fa-shopping-cart"></i>
                             <span class="nav-text">seach</span>
                         </a>
@@ -82,11 +83,13 @@
                                 <input type="checkbox" id="label1" class="hidden_check" />
                                 <div class="hidden_show">
                                     <!--非表示ここから-->
-                                    　　　　日付<br>　　　　
-                                    <input type="date" name="date"><br>
-                                    　　　　活動会社名<br>　　　　
-                                    <input type="text" name="company"><br>
-                                    　　　<input type="button" onClick="location.href='/search/students_search.html'" value="検索">
+                                    <form action="../search/students_search.html" method="get">
+                                        　　　　日付<br>　　　　
+                                        <input type="date" name="date" required><br>
+                                        　　　　活動会社名<br>　　　　
+                                        <input type="text" name="company" required><br>
+                                        　　　<input type="submit" value="検索">
+                                    </form>
                                     <!--ここまで-->
                                 </div>
                             </div>
@@ -94,7 +97,7 @@
                     </li>
                     <!-- 4th -->
                     <li class="darkerli">
-                        <a href="/search/students_search.html">
+                        <a href="../search/students_search.html">
                             <i class="fa fa-shopping-cart"></i>
                             <span class="nav-text">chat</span>
                         </a>
@@ -103,42 +106,49 @@
             </ul>
         </div>
     </nav>
-    <form>
+    <form action="students_application_finish.html" method="get" name="myFORM">
         <h1>就職活動申請画面</h1>
-        開始時<input type="datetime-local" name="start"><br><br>
+        開始時<input type="datetime-local" name="start" required><br><br>
 
-        終了時<input type="datetime-local" name="finish" placeholder="例)2018"><br><br>
+        終了時<input type="datetime-local" name="finish" placeholder="例)2018" required><br><br>
 
         場所
-        <input type="text" name="place" placeholder="例)北海道情報専門学校"><br><br>
+        <input type="text" name="place" placeholder="例)北海道情報専門学校" required><br><br>
         内容
-        <input type="radio" name="contents" value="gouki">合企
+        <input type="radio" name="contents" value="gouki" required>合企
         <input type="radio" name="contents" value="tandoku">単独
         <input type="radio" name="contents" value="shiken">試験<br><br>
 
+        <p>
+            <label><input type="radio" name="rs" value="1" onclick="checkradio('none');">選択肢1</label>
+            <label><input type="radio" name="rs" value="2" onclick="checkradio('none');">選択肢2</label>
+            <label><input type="radio" name="rs" value="3" onclick="checkradio('inline');">その他</label>
+            <span id="sample">( 具体的にどうぞ：<input type="text" name="othertext" value="" size="15"> )</span>
+        </p>
+
         活動会社名
-        <input type="text" name="company"><br><br>
+        <input type="text" name="company" required><br><br>
 
         <!-- スペースは文字調整のため使用 -->
-        　　　　　　　　<input type="radio" name="company" value="absence">欠席
-        <input type="datetime-local" name="sabsence" value="sabsence">
+        <input type="radio" name="moto" onClick="setRTF()" required>欠席
+        <input type="date" name="tf0" disabled required>
         ～
-        <input type="datetime-local" name="fabsence" value="fabsence">
+        <input type="date" name="tf0" disabled required>
         <br><br>
 
         <!-- スペースは文字調整のため使用 -->
-        　<input type="radio" name="company" value="leave">早退
-        <input type="datetime-local" name="seave">
+        <input type="radio" name="moto" onClick="setRTF()">早退
+        <input type="datetime-local" name="tf1" disabled required>
         より早退予定<br><br>
 
         <!-- スペースは文字調整のため使用 -->
-        　　<input type="radio" name="company" value="late">遅刻
-        <input type="datetime-local" name="slate">
+        <input type="radio" name="moto" onClick="setRTF()">遅刻
+        <input type="datetime-local" name="tf2" disabled required>
         分より出席予定<br><br>
 
         メモ<br>
-        <textarea name="remarks" cols="40" maxlength="40" value="remarks"></textarea><br><br>
-        <input type="button" onClick="location.href='students_application_finish.html'" value="送信する">
+        <textarea name="remarks" cols="40" maxlength="40" value="remarks" required></textarea><br><br>
+        <input type="submit" value="送信">
     </form>
 </body>
 

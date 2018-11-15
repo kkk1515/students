@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/common.css" type="text/css">
     <title>生徒-Top-</title>
     <link href=/resources/css/style.css rel="stylesheet">
+    <script type="text/javascript" src="../js/common.js"></script>
 </head>
 
 <body>
@@ -25,6 +26,18 @@
 
     <a class="font_design" href="/application/students_application.html">就職活動申請</a>
     <a class="font_design" href="/search/students_search_home.html">就職活動検索・報告・訂正閲覧</a>
+    <p>
+        <label><input type="radio" name="rs" value="1" onclick="checkradio('none');">選択肢1</label>
+        <label><input type="radio" name="rs" value="2" onclick="checkradio('none');">選択肢2</label>
+        <label><input type="radio" name="rs" value="3" onclick="checkradio('inline');">その他</label>
+        <span id="sample">( 具体的にどうぞ：<input type="text" name="othertext" value="" size="15"> )</span>
+    </p>
+    <!-- ここ -->
+    <form name="myFORM">
+        <input type="radio" name="moto" onClick="setRTF()">小学校　<input type="date" name="tf0" disabled><br>
+        <input type="radio" name="moto" onClick="setRTF()">中学校　<input type="text" name="tf1" disabled><br>
+        <input type="radio" name="moto" onClick="setRTF()">高等学校<input type="text" name="tf2" disabled><br>
+    </form>
 </body>
 
 </html>
